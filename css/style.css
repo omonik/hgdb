@@ -1,0 +1,47 @@
+ /* CSS стили для таблицы */
+:root {
+  --text-max-width: 1000px;
+  --background-blue: #000084;
+  --text-colour: #bbbbbb;
+  --text-span-colour: #ffffff;
+  --link-colour: #b1f543;
+  --link-hover-colour: #00aaaa;
+}
+
+html {
+  background-color: var(--background-blue);
+}
+
+body {
+  margin: auto;
+  color: var(--text-colour);
+  font-family: 'EpilepsySans', monospace;
+  font-size: var(--font-size);
+}
+
+a {
+  text-decoration: none;
+  color: var(--link-colour);
+}
+
+a:hover {
+  background-color: var(--link-hover-colour);
+}
+
+table {
+  border-collapse: collapse;
+  width: 100%;
+}
+th, td {
+  border: 1px dashed #dddddd;
+  text-align: left;
+  padding: 8px;
+}
+
+th {
+  background-color: #840000;
+}
+
+tr:nth-child(even) {
+  background-color: #0f0f0f;
+}

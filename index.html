@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Виртуальное Братство - База данных</title>
+    <link rel="shortcut icon" type="image/icon" href="img/favicon.ico"/>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+  <h1>Внимание, розыск!</h1>
+  <ul id="departments">
+    <li><a href="#" onclick="loadDepartment('data1')">Неизвестные</a></li>
+    <li><a href="#" onclick="loadDepartment('data2')">Бахтиярская международная миротворческая бригада</a></li>
+    <li><a href="#" onclick="loadDepartment('data3')">Полк особого назначения «Возмездия»</a></li>
+    <li><a href="#" onclick="loadDepartment('data4')">Батальон «Меч» имени Хасана Халоева</a></li>
+    <li><a href="#" onclick="loadDepartment('data5')">Диверсионно-иностранная группа</a></li>
+    <li><a href="#" onclick="loadDepartment('data6')">Этническая преступная группировка «Восток»</a></li>
+    <!-- Добавьте дополнительные элементы списка для других подразделений -->
+  </ul>
+
+  <div id="wanted-people">
+    <!-- Здесь будет отображаться список разыскиваемых лиц для выбранного подразделения -->
+  </div>
+
+  <script>
+    function loadDepartment(department) {
+      // Очищаем содержимое блока с разыскиваемыми лицами
+      document.getElementById("wanted-people").innerHTML = "";
+
+      // Загружаем содержимое файла с разыскиваемыми лицами для выбранного подразделения
+      fetch(`data/${department}.html`)
+        .then(response => response.text())
+        .then(data => {
+          document.getElementById("wanted-people").innerHTML = data;
+        });
+    }
+  </script>
+  
+  <footer>
+    <p>*База содержиит информацию только о тех лицах, в отношении которых розыск ведется в установленном порядке с использованием телекоммуникаций.<br>Организация розыскной работы правоохранительных органов регламентируется нормативными правовыми актами, Законом "Об оперативно-розыскной деятельности" и Уголовно-процессуальным кодексом Российской Федерации.</p>
+    <p>Виртуальное Братство. Дата последнего изменения: 13.12.2023 11:30</p>
+  </footer>
+</body>
+</html>
