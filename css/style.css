@@ -45,3 +45,13 @@ th {
 tr:nth-child(even) {
   background-color: #0f0f0f;
 }
+
+footer {
+  text-align: center;
+  margin-top: 20px;
+  padding: 10px 0;
+}
+
+footer p {
+  margin: 5px 0;
+}
